@@ -152,4 +152,34 @@
     <axis xyz="0 0 0" />
   </joint>
 
+  <link name="can_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0.0 0.0 0.0" />
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0"
+               iyy="0.0" iyz="0.0"
+               izz="0.0" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.03 0.03 0" rpy="1.57 0 0" />
+      <geometry>
+        <mesh filename="package://bumperbot_description/meshes/can.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bumperbot_description/meshes/can.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="can_joint" type="fixed">
+    <origin xyz="0 0 0.078" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="can_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+
 </robot>
